@@ -15,6 +15,9 @@ let collect_ratings = () => {
         ratings.average = ratings.sum/ratings.count;
     }
     return ratings;
-   
-    
 }
+
+document.addEventListener('change', () => {
+    ratings = collect_ratings();
+    document.querySelector("#average").value = ratings.average.toFix(2);
+})
